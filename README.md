@@ -7,7 +7,10 @@
 import zoomeye.sdk as zoomeye
 zm = zoomeye.ZoomEye(api_key="3******f-b**9-a***c-3**5-28******fd8") #API-KEY for 認證
 pattern = 'apache country:cn'
-data = zm.dork_search(pattern)
+page = input("page")
+#data = zm.dork_search(pattern)
+data = zm.multi_page_search(pattern,page)
+# multi_page_search(dork, page=1, resource="host", facets=None)
 #zoomeye.show_site_ip(data) # as it #says, ex:None 69.163.238.224
 #zoomeye.show_ip_port(data) # as it says, ex:45.116.241.186 40000
 

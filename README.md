@@ -23,6 +23,12 @@ for l in data:
     i=i+1
 
 ```
+## 建構搜尋關鍵字
+category:value
+邏輯運算表示
+' ' 為 or 運算符
+'+' 為 and 運算符-
+'-' 為 not 運算符
 
 ## return of dork_search
 data is list of dict, and there is still dict in dict.

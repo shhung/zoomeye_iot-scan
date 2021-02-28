@@ -12,3 +12,29 @@ for l in data:
     print("ip: " + l['ip'])
     print("port: " + str(l['portinfo']['port']) + '\n')
     i=i+1
+
+def dev_router(data):
+    if(re.search('router',data['portinfo']['device'],re.I) != None):
+        return data
+    elif (re.search('router',data['portinfo']['app'],re.I) != None):
+        return data
+    else:
+        return None
+
+def dev_printer(data):
+    if(re.search('printer',data['portinfo']['device'],re.I) != None):
+        return data
+    elif (re.search('printer',data['portinfo']['app'],re.I) != None):
+        return data
+    else:
+        return None
+
+def dev_cam(data):
+    if(re.search('camera',data['portinfo']['device'],re.I) != None):
+        return data
+    elif(re.search('webcam',data['portinfo']['device'],re.I) != None):
+        return data
+    elif (re.search('camera',data['portinfo']['app'],re.I) != None):
+        return data
+    else:
+        return None

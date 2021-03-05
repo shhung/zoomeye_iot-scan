@@ -38,3 +38,31 @@ def dev_cam(data):
         return data
     else:
         return None
+    
+    
+def category_rec(data, device):
+    state = 0
+    for k,v in data.items():
+        if type(v)==type(data):
+            state = category_rec(v, device)
+            if(state == 1):
+                break
+        else:
+            if(re.search(device, str(v), re.I) != None):
+                state = 1
+                print(k,v)
+                break
+    return state
+                
+count = 0
+for i in data:
+    if (category_rec(i,r"\brouter\b")==1):
+        count = count+1
+        print(i['ip'])
+
+count = 0
+for i in data:
+    if (category_rec(i,r"\bwap\b")==1):
+        count = count+1
+        print(i['ip'])
+    

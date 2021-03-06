@@ -1,7 +1,10 @@
 import zoomeye.sdk as zoomeye
 zm = zoomeye.ZoomEye(api_key="XXXXXXXX-XXXX-XXXXX-XXXX-XXXXXXXXXXX")
-pattern = 'apache country:cn'
-data = zm.dork_search(pattern)
+# pattern = 'apache country:cn'
+pattern = input('pattern:')
+# data = zm.dork_search(pattern)
+# cidr:140.123.0.0/16
+data = zm.multi_page_search(pattern,2)
 # zoomeye.show_site_ip(data) # as it says, ex:None 69.163.238.224
 # zoomeye.show_ip_port(data) # as it says, ex:45.116.241.186 40000
 
